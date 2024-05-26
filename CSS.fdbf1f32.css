@@ -1,0 +1,218 @@
+body {
+  background-color: #f0f0f0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  z-index: 9999;
+}
+
+.logo-container {
+  height: 80%;
+  width: max-content;
+  margin-left: 1rem;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.nav-items ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-right: 2rem;
+  color: black;
+  font-size: 1rem;
+}
+
+.nav-items ul li {
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: border-bottom 0.3s ease-out;
+}
+
+.nav-items ul li:hover {
+  border-bottom: 1px solid black;
+}
+
+.body {
+  width: 80%;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.body h1 {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-size: 3rem;
+  background: #ff0000;
+  background: linear-gradient(to left, #ff0000 0%, #000000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.res-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.res-card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.res-card:hover {
+  transform: scale(0.95);
+}
+
+.res-card .img-container {
+  width: 95%;
+  height: 60%;
+  border-radius: 15px;
+}
+
+.res-card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.res-info-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+
+.res-info-container h3 {
+  color: #42444a;
+}
+
+.shimmer-card {
+  position: relative;
+  background-color: #f0f0f0;
+  transition: none;
+  width: 200px;
+  height: 300px;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.shimmer-image-holder {
+  position: relative;
+  background-color: #bbb;
+  width: 100%;
+  height: 60%;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #dfdede, #aba9a9, #dfdede);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0; /* Initial position */
+  }
+  100% {
+    background-position: -200% 0; /* Final position */
+  }
+}
+
+.shimmer-bar-1 {
+  width: 100px;
+  height: 20px;
+  background-color: #bbb;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #dfdede, #aba9a9, #dfdede);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+i {
+  position: absolute;
+  top: 3%;
+  right: 10%;
+  color: black;
+  font-size: 1rem;
+  background-color: white;
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+
+.filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2;
+    margin-bottom: 1rem;
+}
+
+.filter-input{
+    padding: 0.5rem;
+    border-radius: 10px;
+    outline: none;
+    margin-right: 2rem;
+    border: none;
+    font-size: large;
+}
+
+.filter-input:focus{
+    outline: blue;
+}
+
+.search-button{
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(65, 65, 172);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-button:hover{
+    background-color: rgb(46, 46, 219);
+}
+
+
+/*# sourceMappingURL=/CSS.fdbf1f32.css.map */
