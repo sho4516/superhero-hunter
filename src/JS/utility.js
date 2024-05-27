@@ -23,7 +23,8 @@ export const displayCharacters = (characters, isHomePage) => {
     } else {
       favoriteIconBtn.classList.add("fa-regular");
     }
-    favoriteIconBtn.addEventListener("click", () => {
+    favoriteIconBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
       toggleFavorite(hero, favoriteIconBtn, isHomePage);
     });
     resCardEl.addEventListener("click", () => {

@@ -27,12 +27,6 @@ async function main() {
     );
   }
   displayCharacters(allSuperheroes, isHomePage);
-  const favoriteIconEl = document.querySelectorAll(".favorite-icon");
-  favoriteIconEl.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-  });
 }
 
 favoritesEl.addEventListener("click", () => {
