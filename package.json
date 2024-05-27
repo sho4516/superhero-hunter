@@ -5,12 +5,17 @@
   "main": "src/HTML/index.html",
   "scripts": {
     "dev": "parcel src/HTML/index.html src/HTML/superhero.html src/HTML/index.html",
-    "build": "parcel build src/HTML/index.html src/HTML/superhero.html"
+    "build": "parcel build src/HTML/index.html src/HTML/superhero.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Shobhit",
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^4.2.0",
     "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

@@ -4,11 +4,10 @@ import { fetchCharacters } from "./fetchFromApi";
 import { displayShimmer } from "./utility";
 import { displayFavorites } from "./utility";
 
-const favoritesEl = document.getElementById('favorites');
-const homeEl = document.getElementById('home');
-const searchButtonEl = document.querySelector('.search-button');
-const filterInputEl = document.querySelector('.filter-input');
-
+const favoritesEl = document.getElementById("favorites");
+const homeEl = document.getElementById("home");
+const searchButtonEl = document.querySelector(".search-button");
+const filterInputEl = document.querySelector(".filter-input");
 
 let allSuperheroes = [];
 let isHomePage = true;
@@ -27,26 +26,32 @@ async function main() {
       hash.timestamp
     );
   }
-  displayCharacters(allSuperheroes,isHomePage);
+  displayCharacters(allSuperheroes, isHomePage);
+  const favoriteIconEl = document.querySelectorAll(".favorite-icon");
+  favoriteIconEl.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  });
 }
 
-favoritesEl.addEventListener('click', ()=>{
-    isHomePage = false;
-    displayFavorites(isHomePage);
+favoritesEl.addEventListener("click", () => {
+  isHomePage = false;
+  displayFavorites(isHomePage);
 });
 
-homeEl.addEventListener('click', ()=>{
-    isHomePage=true;
-    main();
+homeEl.addEventListener("click", () => {
+  isHomePage = true;
+  main();
 });
 
-searchButtonEl.addEventListener('click', ()=>{
-    const searchtext = filterInputEl.value;
-    filteredSuperheroList = allSuperheroes.filter((item)=>{
-        return item.name.toUpperCase().includes(searchtext.toUpperCase());
-    });
-    displayCharacters(filteredSuperheroList);
-    filterInputEl.value='';
+searchButtonEl.addEventListener("click", () => {
+  const searchtext = filterInputEl.value;
+  filteredSuperheroList = allSuperheroes.filter((item) => {
+    return item.name.toUpperCase().includes(searchtext.toUpperCase());
+  });
+  displayCharacters(filteredSuperheroList);
+  filterInputEl.value = "";
 });
 
 main();
