@@ -7677,8 +7677,6 @@ var displayFavorites = exports.displayFavorites = function displayFavorites(isHo
 var displayCharacterDetails = exports.displayCharacterDetails = function displayCharacterDetails(character) {
   var heroSectionEl = document.querySelector(".hero-section");
   var detailsSectionEl = document.querySelector(".details-section");
-  console.log("vfdvfdvfdv");
-  console.log(character);
   heroSectionEl.innerHTML = "\n            <div class=\"hero-image\">\n                <img src=\"".concat(character[0].thumbnail.path, ".").concat(character[0].thumbnail.extension, "\" alt=\"Superhero Name\" />\n            </div>\n            <div class=\"hero-info\">\n                <h1>").concat(character[0].name, "</h1>\n                <p class=\"bio\">\n                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent\n                    bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                    Praesent bibendum. Lorem ipsum dolor sit amet, consectetur\n                    adipiscing elit. Praesent bibendum. Lorem ipsum dolor sit amet,\n                    consectetur adipiscing elit. Praesent bibendum. Lorem ipsum dolor\n                    sit amet, consectetur adipiscing elit. Praesent bibendum. Lorem\n                    ipsum dolor sit amet, consectetur adipiscing elit. Praesent\n                    bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n                    Praesent bibendum.\n                </p>\n            </div>");
   detailsSectionEl.innerHTML = "\n            <div class=\"tabs\">\n                <button class=\"tab-button\" data-tab=\"comics\">Comics</button>\n                <button class=\"tab-button\" data-tab=\"events\">Events</button>\n                <button class=\"tab-button\" data-tab=\"series\">Series</button>\n                <button class=\"tab-button\" data-tab=\"stories\">Stories</button>\n            </div>";
   if (character[0].comics.items.length > 0) {
@@ -7795,7 +7793,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53038" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60013" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
