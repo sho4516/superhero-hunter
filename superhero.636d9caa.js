@@ -7593,7 +7593,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.removeFavorite = exports.displayShimmer = exports.displayFavorites = exports.displayCharacters = exports.displayCharacterDetails = void 0;
-var favorites = [];
+var favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 var displayCharacters = exports.displayCharacters = function displayCharacters(characters, isHomePage) {
   var resContainerEl = document.querySelector(".res-container");
   resContainerEl.innerHTML = "";
@@ -7639,6 +7639,7 @@ var toggleFavorite = function toggleFavorite(hero, favoriteIconBtn, isHomePage) 
 // Function to add a character to favorites
 var addFavorite = function addFavorite(hero) {
   favorites.push(hero);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 };
 
 // Function to remove a character from favorites
@@ -7648,6 +7649,7 @@ var removeFavorite = exports.removeFavorite = function removeFavorite(hero, isHo
   });
   if (index !== -1) {
     favorites.splice(index, 1);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
     if (!isHomePage) {
       displayFavorites(false);
     }
@@ -7793,7 +7795,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50096" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53038" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
