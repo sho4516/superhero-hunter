@@ -35,6 +35,7 @@ favoritesEl.addEventListener("click", () => {
 });
 
 homeEl.addEventListener("click", () => {
+  window.location.href = `./index.html`;
   isHomePage = true;
   main();
 });

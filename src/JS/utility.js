@@ -99,8 +99,6 @@ export const displayFavorites = (isHomePage) => {
 export const displayCharacterDetails = (character) => {
   const heroSectionEl = document.querySelector(".hero-section");
   const detailsSectionEl = document.querySelector(".details-section");
-  console.log("vfdvfdvfdv");
-  console.log(character);
   heroSectionEl.innerHTML = `
             <div class="hero-image">
                 <img src="${character[0].thumbnail.path}.${character[0].thumbnail.extension}" alt="Superhero Name" />
