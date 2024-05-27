@@ -7516,7 +7516,8 @@ var displayCharacters = exports.displayCharacters = function displayCharacters(c
     } else {
       favoriteIconBtn.classList.add("fa-regular");
     }
-    favoriteIconBtn.addEventListener("click", function () {
+    favoriteIconBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
       toggleFavorite(hero, favoriteIconBtn, isHomePage);
     });
     resCardEl.addEventListener("click", function () {
@@ -7734,7 +7735,7 @@ function main() {
 }
 function _main() {
   _main = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var publicKey, privateKey, hash, favoriteIconEl;
+    var publicKey, privateKey, hash;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -7752,13 +7753,7 @@ function _main() {
           allSuperheroes = _context.sent;
         case 8:
           (0, _utility.displayCharacters)(allSuperheroes, isHomePage);
-          favoriteIconEl = document.querySelectorAll(".favorite-icon");
-          favoriteIconEl.forEach(function (item) {
-            item.addEventListener("click", function (event) {
-              event.stopPropagation();
-            });
-          });
-        case 11:
+        case 9:
         case "end":
           return _context.stop();
       }
@@ -7808,7 +7803,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62368" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50096" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
