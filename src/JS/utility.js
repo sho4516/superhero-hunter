@@ -1,4 +1,4 @@
-const favorites = [];
+const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 export const displayCharacters = (characters, isHomePage) => {
   const resContainerEl = document.querySelector(".res-container");
@@ -53,6 +53,7 @@ const toggleFavorite = (hero, favoriteIconBtn, isHomePage) => {
 // Function to add a character to favorites
 const addFavorite = (hero) => {
   favorites.push(hero);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 };
 
 // Function to remove a character from favorites
@@ -60,6 +61,7 @@ export const removeFavorite = (hero, isHomePage) => {
   const index = favorites.findIndex((favorite) => favorite.id === hero.id);
   if (index !== -1) {
     favorites.splice(index, 1);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
 
     if (!isHomePage) {
       displayFavorites(false);
